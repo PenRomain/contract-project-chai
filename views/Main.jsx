@@ -1,10 +1,10 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Log({ title }) {
+module.exports = function Main({ title }) {
   return (
     <Layout title={title}>
-      <div>main</div>
+      <div className="main_map">main</div>
     </Layout>
   );
 };
