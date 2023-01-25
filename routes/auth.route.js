@@ -1,5 +1,8 @@
 const router = require('express').Router();
+const bcrypt = require('bcrypt');
+
 const { User } = require('../db/models');
+
 const Log = require('../views/Log');
 const Reg = require('../views/Reg');
 
@@ -17,11 +20,16 @@ router.post('/reg', async (req, res) => {
     if (name && password && email) {
       const user = await User.findOne({ where: { name, email } });
       if (!user) {
-        User.create({ name, password, email }).then((result) => {
+        // добавил хэширование пароля при регистрации
+        const hash = await bcrypt.hash(req.body.password, 10);
+        User.create({ name, password: hash, email }).then((result) => {
           res.app.locals.name = result.name;
           res.app.locals.id = result.id;
+
+          req.session.user = { name, email };
           res.status(201).json({ message: 'успешно!' }); // redirect mainPage '/' windows.location.assign
         });
+        // и запись в сессию
       } else {
         res.status(412).json({ message: 'Такое имя пользователя существует!' }); // обработка fetch
       }
@@ -35,20 +43,50 @@ router.post('/reg', async (req, res) => {
 
 router.post('/log', (req, res) => {
   try {
-    User.findOne({ where: { name: req.body.name, password: req.body.password } })
-      .then((result) => {
+    User.findOne({
+      where: { name: req.body.name, password: req.body.password },
+    })
+      .then(async (result) => {
         if (result) {
-          res.app.locals.name = result.name;
-          res.app.locals.id = result.id;
+          // проверка на пароль
+          const equalTo = await bcrypt.compare(
+            req.body.password,
+            result.password
+          );
+          if (equalTo) {
+            res.app.locals.name = result.name;
+            res.app.locals.id = result.id;
+            // запись в сессию
+            req.session.user = {
+              id: result.id,
+              name: result.name,
+              email: result.email,
+            };
+          }
           res.redirect('/'); // тут не уверен что перейдет нужно тестить
         } else {
           res.status(412);
         }
       })
-      .catch(() => res.status(412).json({ message: 'не верный логин или пароль' })); // fetch
+      .catch(() =>
+        res.status(412).json({ message: 'не верный логин или пароль' })
+      ); // fetch
   } catch (e) {
     res.status(500).json({ message: 'Что-то пошло не так' });
   }
+});
+
+// добавил логаут
+router.get('/out', (req, res) => {
+  req.session.destroy((e) => {
+    if (e) {
+      res.status(500).json({ message: 'Ошибка при удалении сессии' });
+    }
+    res.clearCookie('user_sid');
+    res.app.locals = '';
+    // .json({ message: 'Успешный выход' });
+    res.redirect('/');
+  });
 });
 
 module.exports = router;
