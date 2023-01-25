@@ -5,7 +5,7 @@ module.exports = function Log({ title }) {
   return (
     <Layout title={title}>
       <h2>Login</h2>
-      <form action="/auth/log" method="post">
+      <form action="/auth/log" method="post" id="log-form">
         <label htmlFor="name_input" className="block mar-b-1">
           Name:
         </label>
