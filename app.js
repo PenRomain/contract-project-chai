@@ -1,4 +1,5 @@
 require('@babel/register');
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
@@ -10,7 +11,7 @@ const sessionConfig = require('./config/session');
 
 const app = express();
 
-const PORT = 3000;
+const PORT = process.env.PORT || 4000;
 
 const authRoute = require('./routes/auth.route');
 const mainRoute = require('./routes/main.route');
