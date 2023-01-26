@@ -66,7 +66,7 @@ router.post('/log', async (req, res) => {
           email: userFinded.email,
         };
         if (userFinded.name === 'administrator') {
-          return res.json({ login: true, url: '/admin' });
+          return res.json({ login: 'admin', url: '/admin' });
         }
         res.json({ login: true, url: '/' }); // тоже не уверен что так сработает (к)
       }
