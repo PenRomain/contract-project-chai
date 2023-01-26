@@ -5,7 +5,7 @@ module.exports = function Reg({ title, user }) {
   return (
     <Layout user={user} title={title}>
       <h2>Regisration</h2>
-      <form action="/auth/reg" method="post">
+      <form action="/auth/reg" method="post" id="reg-form">
         <label htmlFor="name_input" className="block mar-b-1">
           Name:
         </label>

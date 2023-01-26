@@ -29,7 +29,7 @@ router.post('/reg', async (req, res) => {
           // res.app.locals.id = result.id;
 
           req.session.user = { name, email };
-          res.status(201).json({ message: 'успешно!' }); // redirect mainPage '/' windows.location.assign
+          res.status(201).json({ url: '/', message: 'успешно!' }); // redirect mainPage '/' windows.location.assign
         });
         // и запись в сессию
       } else {
@@ -64,6 +64,7 @@ router.post('/log', (req, res) => {
               email: result.email,
             };
           }
+          res.json({ url: '/' }); // тоже не уверен что так сработает (к)
           res.redirect('/'); // тут не уверен что перейдет нужно тестить
         } else {
           res.status(412);
