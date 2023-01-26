@@ -1,3 +1,11 @@
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
 .china {
   position: relative;
   color: black;
@@ -63,3 +71,13 @@
   left: 1150px;
   top: 568px;
 }
+
+.country {
+  text-decoration: none;
+}
+
+.country:hover{
+  cursor: pointer;
+  text-decoration: none;
+}
+
