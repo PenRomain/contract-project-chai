@@ -19,6 +19,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* align-items: center; */
   height: 100%;
   /* background: url(../images/tea-map-grey-2048x1576-1.png); */
 }
@@ -29,9 +33,11 @@ body {
   align-items: center; */
   /* background-image: url(../images/tea-map-grey-2048x1576-1.png); */
   background: url(../images/tea-map-grey-2048x1576-1.png);
-  width: 1024px;
-  height: 768px;
+  width: 1372px;
+  height: 1053px;
   background-size: cover;
+  /* position: relative;
+  z-index: 2; */
   /* border: 5px; */
   /* width: 100%;
   height: 100%; */

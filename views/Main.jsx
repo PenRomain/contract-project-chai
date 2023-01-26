@@ -4,7 +4,17 @@ const Layout = require('./Layout');
 module.exports = function Main({ title }) {
   return (
     <Layout title={title}>
-      <div className="main_map">main</div>
+      <div className="main_map">
+        <div className="china">Китай</div>
+        <div className="japan">Япония</div>
+        <div className="india">Индия</div>
+        <div className="vietnam">Вьетнам</div>
+        <div className="taiwan">Тайвань</div>
+        <div className="australia">Австралия</div>
+        {/* <div className="china">china</div>
+        <div className="japain">japain</div>
+        <div className="india">india</div> */}
+      </div>
     </Layout>
   );
 };

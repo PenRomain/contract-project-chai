@@ -1,13 +1,14 @@
 const React = require('react');
 const Navbar = require('./Navbar');
 
-module.exports = function Layout({ title, children }) {
+module.exports = function Layout({ title, children, user }) {
   return (
     <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <link rel="stylesheet" href="/styles/normalize.css" />
         <link rel="stylesheet" href="/styles/application.css" />
+        <link rel="stylesheet" href="/styles/countries.css" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
