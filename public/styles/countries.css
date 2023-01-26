@@ -1,65 +1,330 @@
 .china {
-  position: relative;
-  color: black;
+  position: absolute;
+  color: #000000;
   font-size: 16px;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
   background-color: #006f20;
   max-width: min-content;
-  left: 1054px;
-  top: 380px;
+  left: 1152px;
+  top: 411px;
 }
 
 .japan {
-  position: relative;
+  position: absolute;
   color: black;
   font-size: 16px;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
   background-color: #ffffff;
   max-width: min-content;
-  left: 1209px;
-  top: 358px;
+  left: 1319px;
+  top: 417px;
 }
 
 .india {
-  position: relative;
+  position: absolute;
   color: black;
-  font-size: 16px;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
   background-color: #006f20;
-  max-width: min-content;
-  left: 939px;
-  top: 401px;
+  max-width: max-content;
+  left: 1049px;
+  top: 482px;
 }
 
 .vietnam {
-  position: relative;
+  position: absolute;
   color: black;
-  font-size: 16px;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  font-size: 11px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
   background-color: #ffffff;
   max-width: min-content;
-  left: 1102px;
-  top: 416px;
+  left: 1202px;
+  top: 523px;
 }
 
 .taiwan {
-  position: relative;
+  position: absolute;
   color: black;
-  font-size: 16px;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  font-size: 14px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
   background-color: #ffffff;
   max-width: min-content;
-  left: 1150px;
-  top: 351px;
+  left: 1257px;
+  top: 480px;
 }
 
 .australia {
-  position: relative;
+  position: absolute;
   color: black;
   font-size: 16px;
-  border-bottom: 1px solid rgb(0, 0, 0);
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
   background-color: #ff3b3b;
   max-width: min-content;
-  left: 1150px;
-  top: 568px;
+  left: 1261px;
+  top: 718px;
+}
+
+.kenia {
+  position: absolute;
+  color: black;
+  font-size: 17px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 936px;
+  top: 600px;
+}
+
+.azorskieOstrova {
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: max-content;
+  left: 498px;
+  top: 434px;
+}
+
+.ekvador {
+  position: absolute;
+  color: black;
+  font-size: 12px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  border-radius: 1px;
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 358px;
+  top: 607px;
+}
+
+.brazilia {
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ff3b3b;
+  max-width: min-content;
+  left: 488px;
+  top: 644px;
+}
+
+.peru {
+  position: absolute;
+  color: black;
+  font-size: 12px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ff3b3b;
+  max-width: min-content;
+  left: 413px;
+  top: 664px;
+}
+
+.argentina {
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 460px;
+  top: 778px;
+}
+
+.kamerun {
+  position: absolute;
+  color: black;
+  font-size: 10px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ff3b3b;
+  max-width: min-content;
+  left: 753px;
+  top: 556px;
+}
+
+.turkey {
+  position: absolute;
+  color: black;
+  font-size: 12px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffcf00;
+  max-width: min-content;
+  left: 861px;
+  top: 413px;
+}
+
+.uganda {
+  position: absolute;
+  color: #fefefe;
+  font-size: 10px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #393636;
+  max-width: min-content;
+  left: 830px;
+  top: 591px;
+}
+
+.ruanda {
+  position: absolute;
+  color: #fefefe;
+  font-size: 10px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #393636;
+  max-width: min-content;
+  left: 830px;
+  top: 607px;
+}
+
+.burundi {
+  position: absolute;
+  color: #fefefe;
+  font-size: 8px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #393636;
+  max-width: min-content;
+  left: 829px;
+  top: 622px;
+}
+
+.milavi {
+  position: absolute;
+  color: black;
+  font-size: 9px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #c0c0c0;
+  max-width: min-content;
+  left: 847px;
+  top: 653px;
+}
+
+.zimbabve {
+  position: absolute;
+  color: black;
+  font-size: 8px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ff3b3b;
+  max-width: min-content;
+  left: 823px;
+  top: 709px;
+}
+
+.uznayaAfrika {
+  position: absolute;
+  color: black;
+  font-size: 14px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: max-content;
+  left: 853px;
+  top: 781px;
+}
+
+.mozambik {
+  position: absolute;
+  color: black;
+  font-size: 11px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: max-content;
+  left: 880px;
+  top: 723px;
+}
+
+.tanzania {
+  position: absolute;
+  color: black;
+  font-size: 13px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: max-content;
+  left: 912px;
+  top: 631px;
+}
+
+.madagaskar {
+  position: absolute;
+  color: black;
+  font-size: 13px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: max-content;
+  left: 964px;
+  top: 718px;
+}
+
+.mavrikii {
+  position: absolute;
+  color: black;
+  font-size: 12px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 1001px;
+  top: 703px;
+}
+
+.postSssr {
+  position: absolute;
+  color: black;
+  font-size: 14px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffcf00;
+  max-width: max-content;
+  left: 913px;
+  top: 310px;
+}
+
+.shriLanka {
+  position: absolute;
+  color: black;
+  font-size: 16px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: max-content;
+  left: 1022px;
+  top: 597px;
+}
+
+.nepal {
+  position: absolute;
+  color: black;
+  font-size: 14px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #006f20;
+  max-width: max-content;
+  left: 1082px;
+  top: 443px;
+}
+
+.malazia {
+  position: absolute;
+  color: black;
+  font-size: 11px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 1244px;
+  top: 574px;
+}
+
+.bangladesh {
+  position: absolute;
+  color: black;
+  font-size: 11px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 1125px;
+  top: 615px;
+}
+
+.indonezia {
+  position: absolute;
+  color: black;
+  font-size: 11px;
+  /* border-bottom: 1px solid rgb(0, 0, 0); */
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 1163px;
+  top: 656px;
 }
