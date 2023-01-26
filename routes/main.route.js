@@ -5,6 +5,8 @@ const CountryView = require('../views/CountryView');
 const { Comment, Country, Tea } = require('../db/models');
 
 router.get('/', (req, res) => {
+  // const user = res.app.locals;
+  // console.log(user);
   res.renderComponent(Main, { title: 'Карта чая' });
 });
 

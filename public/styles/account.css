@@ -1,0 +1,30 @@
+.account_table {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+img {
+  block-size: 500px;
+  /* display: block; */
+}
+
+.teas {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.tea_tab {
+  /* border: 2px solid rgba(75, 84, 134, 0.652);
+  border-radius: 8px; */
+}
+
+.tea_description {
+  font-size: 22px;
+}
+
+/* .teas:hover {
+  display: table;
+} */
