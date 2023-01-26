@@ -1,0 +1,65 @@
+.china {
+  position: relative;
+  color: black;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #006f20;
+  max-width: min-content;
+  left: 1054px;
+  top: 380px;
+}
+
+.japan {
+  position: relative;
+  color: black;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 1209px;
+  top: 358px;
+}
+
+.india {
+  position: relative;
+  color: black;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #006f20;
+  max-width: min-content;
+  left: 939px;
+  top: 401px;
+}
+
+.vietnam {
+  position: relative;
+  color: black;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 1102px;
+  top: 416px;
+}
+
+.taiwan {
+  position: relative;
+  color: black;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #ffffff;
+  max-width: min-content;
+  left: 1150px;
+  top: 351px;
+}
+
+.australia {
+  position: relative;
+  color: black;
+  font-size: 16px;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #ff3b3b;
+  max-width: min-content;
+  left: 1150px;
+  top: 568px;
+}
