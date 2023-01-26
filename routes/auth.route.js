@@ -7,11 +7,13 @@ const Log = require('../views/Log');
 const Reg = require('../views/Reg');
 
 router.get('/reg', (req, res) => {
-  res.renderComponent(Reg, { title: 'Registration' });
+  const { user } = req.app.locals;
+  res.renderComponent(Reg, { title: 'Registration', user });
 });
 
 router.get('/log', (req, res) => {
-  res.renderComponent(Log, { title: 'Login' });
+  const { user } = req.app.locals;
+  res.renderComponent(Log, { title: 'Login', user });
 });
 
 router.post('/reg', async (req, res) => {
@@ -23,8 +25,8 @@ router.post('/reg', async (req, res) => {
         // добавил хэширование пароля при регистрации
         const hash = await bcrypt.hash(req.body.password, 10);
         User.create({ name, password: hash, email }).then((result) => {
-          res.app.locals.name = result.name;
-          res.app.locals.id = result.id;
+          res.app.locals.user = { id: result.id, name: result.name };
+          // res.app.locals.id = result.id;
 
           req.session.user = { name, email };
           res.status(201).json({ message: 'успешно!' }); // redirect mainPage '/' windows.location.assign
@@ -54,8 +56,7 @@ router.post('/log', (req, res) => {
             result.password
           );
           if (equalTo) {
-            res.app.locals.name = result.name;
-            res.app.locals.id = result.id;
+            res.app.locals.user = { id: result.id, name: result.name };
             // запись в сессию
             req.session.user = {
               id: result.id,
