@@ -12,7 +12,8 @@ router.get('/', (req, res) => {
 
 router.get('/:country', async (req, res) => {
   try {
-    const country = req.params.country[0].toUpperCase() + req.params.country.substring(1);
+    const country =
+      req.params.country[0].toUpperCase() + req.params.country.substring(1);
     const [teaCountry] = await Country.findAll({
       where: {
         name: country,
@@ -28,6 +29,7 @@ router.get('/:country', async (req, res) => {
       teaCountry,
     });
   } catch (e) {
+    res.json({ message: 'OSHIBKA TYT' });
     res.status(500).json({ message: 'Что-то пошло не так' });
   }
 });

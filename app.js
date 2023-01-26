@@ -25,9 +25,9 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(session(sessionConfig));
 
+app.use('/admin', adminRoute);
 app.use('/auth', authRoute);
 app.use('/', mainRoute);
-app.use('/admin', adminRoute);
 
 app.listen(PORT, () => {
   console.log(`Полет нормальный на ${PORT}`);
