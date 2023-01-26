@@ -17,11 +17,11 @@ const authRoute = require('./routes/auth.route');
 const mainRoute = require('./routes/main.route');
 const adminRoute = require('./routes/admin.route');
 
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(ssr);
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 app.use(session(sessionConfig));
 

@@ -7,30 +7,28 @@ const Log = require('../views/Log');
 const Reg = require('../views/Reg');
 
 router.get('/reg', (req, res) => {
-  const { user } = req.app.locals;
-  res.renderComponent(Reg, { title: 'Registration', user });
+  res.renderComponent(Reg, { title: 'Registration' });
 });
 
 router.get('/log', (req, res) => {
-  const { user } = req.app.locals;
-  res.renderComponent(Log, { title: 'Login', user });
+  res.renderComponent(Log, { title: 'Login' });
 });
 
 router.post('/reg', async (req, res) => {
   try {
     const { name, password, email } = req.body;
     if (name && password && email) {
-      const user = await User.findOne({ where: { name, email } });
+      const user = await User.findOne({ where: { name } });
       if (!user) {
         // добавил хэширование пароля при регистрации
         const hash = await bcrypt.hash(req.body.password, 10);
-        User.create({ name, password: hash, email }).then((result) => {
-          res.app.locals.user = { id: result.id, name: result.name };
-          // res.app.locals.id = result.id;
+        const newUser = await User.create({ name, password: hash, email });
+        res.app.locals.user = { id: newUser.id, name: newUser.name };
 
-          req.session.user = { name, email };
-          res.status(201).json({ url: '/', message: 'успешно!' }); // redirect mainPage '/' windows.location.assign
-        });
+        req.session.user = { id: newUser.id, name, email };
+        // res.redirect('/');
+        res.status(201).json({ url: '/', message: 'успешно!' }); // redirect mainPage '/' windows.location.assign
+
         // и запись в сессию
       } else {
         res.status(412).json({ message: 'Такое имя пользователя существует!' }); // обработка fetch
@@ -43,39 +41,41 @@ router.post('/reg', async (req, res) => {
   }
 });
 
-router.post('/log', (req, res) => {
+router.post('/log', async (req, res) => {
+  const { name, password } = req.body;
   try {
-    User.findOne({
-      where: { name: req.body.name, password: req.body.password },
-    })
-      .then(async (result) => {
-        if (result) {
-          // проверка на пароль
-          const equalTo = await bcrypt.compare(
-            req.body.password,
-            result.password
-          );
-          if (equalTo) {
-            res.app.locals.user = { id: result.id, name: result.name };
-            // запись в сессию
-            req.session.user = {
-              id: result.id,
-              name: result.name,
-              email: result.email,
-            };
-          }
-          res.json({ url: '/' }); // тоже не уверен что так сработает (к)
-          res.redirect('/'); // тут не уверен что перейдет нужно тестить
-        } else {
-          res.status(412);
+    const userFinded = await User.findOne({
+      where: { name },
+    });
+
+    // проверка на пароль
+    if (userFinded) {
+      const equalTo = await bcrypt.compare(password, userFinded.password);
+
+      if (equalTo) {
+        // console.log(req.body);
+        res.app.locals.user = {
+          id: userFinded.id,
+          name,
+          // email: userFinded.email,
+        };
+        // запись в сессию
+        req.session.user = {
+          id: userFinded.id,
+          name,
+          email: userFinded.email,
+        };
+        if (userFinded.name === 'administrator') {
+          return res.json({ login: true, url: '/admin' });
         }
-      })
-      .catch(() =>
-        res.status(412).json({ message: 'не верный логин или пароль' })
-      ); // fetch
+        res.json({ login: true, url: '/' }); // тоже не уверен что так сработает (к)
+      }
+    }
+    // res.redirect('/'); // тут не уверен что перейдет нужно тестить
   } catch (e) {
-    res.status(500).json({ message: 'Что-то пошло не так' });
+    res.status(500).json({ message: e });
   }
+  // res.redirect('/');
 });
 
 // добавил логаут
@@ -85,7 +85,7 @@ router.get('/out', (req, res) => {
       res.status(500).json({ message: 'Ошибка при удалении сессии' });
     }
     res.clearCookie('user_sid');
-    res.app.locals = '';
+    res.app.locals.user = '';
     // .json({ message: 'Успешный выход' });
     res.redirect('/');
   });

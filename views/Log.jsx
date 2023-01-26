@@ -1,9 +1,9 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Log({ title }) {
+module.exports = function Log({ title, user }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} user={user}>
       <h2>Login</h2>
       <form action="/auth/log" method="post" id="log-form">
         <label htmlFor="name_input" className="block mar-b-1">
