@@ -3,11 +3,11 @@ const router = require('express').Router();
 const { Country, Tea } = require('../db/models');
 
 const Admin = require('../views/Admin');
-const TeaView = require('../views/Tea');
+const TeaTab = require('../views/TeaTab');
 
 router.get('/', async (req, res) => {
   // const countries = await Country.findAll({ raw: true });
-  const teas = await Tea.findAll({
+  const teasmap = await Tea.findAll({
     include: {
       model: Country,
       key: 'country_id',
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
   });
   // const comments = await Comment.findAll({ raw: true });
 
-  res.renderComponent(Admin, { teas });
+  res.renderComponent(Admin, { teasmap });
 });
 
 router.post('/', async (req, res) => {
@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
           description,
           country_id: currentCountry.id,
         });
-        const teas = await Tea.findAll({
+        const teasmap = await Tea.findAll({
           include: {
             model: Country,
             key: 'country_id',
@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
           raw: true,
         });
         // res.json({ bool: true, url: '/admin' });
-        res.renderComponent(TeaView, { teaAdd }, { doctype: false });
+        res.renderComponent(TeaTab, { teaAdd }, { doctype: false });
         // res.redirect('/admin');
       }
       res.json({ message: 'Такой чай уже есть' });
