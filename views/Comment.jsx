@@ -1,18 +1,8 @@
 const React = require('react');
 
-function Comment({}) {
+function Comment({ comment }) {
   return (
-    <ul>
-      {/* {teas.map((comments) => (
-        <li key={comments.id}>
-          {comments.map((comment) => (
-            <p key={comment.id}>
-              {comment.text}
-            </p>
-          ))}
-        </li>
-      ))} */}
-    </ul>
+    <h5>{comment.text}</h5>
   );
 }
 

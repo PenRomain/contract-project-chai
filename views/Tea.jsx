@@ -1,6 +1,30 @@
 const React = require('react');
 
-module.exports = function Tea({ tea, user }) {
+const Comment = require('./Comment');
+
+function Tea({ tea }) {
+  return (
+    <div>
+      <h3>{tea.name}</h3>
+      <img src={tea.image} width="300px" alt="" />
+      <h5>{tea.description}</h5>
+      <form id="comment-form" action="/comment/:id" method="post">
+        <input type="text" name="comment" placeholder="Ваше мнение о чае" />
+        <button type="submit">Отправить</button>
+      </form>
+      {tea.Comments.map((comment) => (
+        <div className="tea-comment" key={comment.id}>
+          <Comment comment={comment} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+module.exports = Tea;
+
+
+module.exports = function TeaTab({ tea, user }) {
   return (
     <div data-id={tea.id} className="tea_tab" key={tea.id}>
       <h1>{tea['Country.name']}</h1>
@@ -42,3 +66,4 @@ module.exports = function Tea({ tea, user }) {
     </div>
   );
 };
+
