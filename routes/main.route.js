@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { logger } = require('sequelize/lib/utils/logger');
+
 const Main = require('../views/Main');
 const CountryView = require('../views/CountryView');
 
@@ -8,15 +8,16 @@ const { Comment, Country, Tea } = require('../db/models');
 router.get('/', async (req, res) => {
   // const user = res.app.locals;
   // console.log(user);
-  Country.findAll({ include: Tea })
+  const allCountry = await Country.findAll({ include: Tea });
 
-    .then((allCountry) => allCountry.map((country) => ({
-      name: country.name,
-      teas: country.Teas.map((tea) => tea.name).join('\n'),
-    })))
-    .then((teaCountry) => res.renderComponent(Main, { title: 'Карта чая', teaContry: teaCountry }))
-    .catch(() => res.renderComponent(Main, { title: 'Карта чая' }));
+  const teaCountry = allCountry.map((country) => ({
+    name: country.name,
+    teas: country.Teas.map((tea) => tea.name).join('\n'),
+  }));
+  console.log(teaCountry);
+  res.renderComponent(Main, { title: 'Карта чая', teaCountry });
 
+  //  res.renderComponent(Main, { title: 'Карта чая' })
 });
 
 router.get('/:country', async (req, res) => {
@@ -27,7 +28,7 @@ router.get('/:country', async (req, res) => {
       where: {
         name: country,
       },
-      includes: Tea,
+      include: Tea,
     });
     const comments = await Comment.findAll();
 
@@ -41,7 +42,7 @@ router.get('/:country', async (req, res) => {
     });
 
     res.renderComponent(CountryView, {
-      comments,
+      teas,
       title: 'титле',
       teaCountry,
     });
