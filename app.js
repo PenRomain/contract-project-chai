@@ -15,7 +15,11 @@ const PORT = process.env.PORT || 4000;
 
 const mainRoute = require('./routes/main.route');
 const adminRoute = require('./routes/admin.route');
+
+const accountRoute = require('./routes/account.route');
+
 const authRoute = require('./routes/auth.route');
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -25,9 +29,12 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(session(sessionConfig));
 
+
+app.use('/auth', authRoute);
 app.use('/', mainRoute);
 app.use('/admin', adminRoute);
-app.use('/auth', authRoute);
+app.use('/account', accountRoute);
+
 
 app.listen(PORT, () => {
   console.log(`Полет нормальный на ${PORT}`);

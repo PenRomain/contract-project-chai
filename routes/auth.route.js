@@ -53,13 +53,13 @@ router.post('/log', async (req, res) => {
       const equalTo = await bcrypt.compare(password, userFinded.password);
 
       if (equalTo) {
-        // console.log(req.body);
         res.app.locals.user = {
           id: userFinded.id,
           name,
           // email: userFinded.email,
         };
         // запись в сессию
+
         req.session.user = {
           id: userFinded.id,
           name,
@@ -68,7 +68,7 @@ router.post('/log', async (req, res) => {
         if (userFinded.name === 'administrator') {
           return res.json({ login: 'admin', url: '/admin' });
         }
-        res.json({ login: true, url: '/' }); // тоже не уверен что так сработает (к)
+        res.json({ login: true, url: '/account' }); // тоже не уверен что так сработает (к)
       }
     }
     // res.redirect('/'); // тут не уверен что перейдет нужно тестить

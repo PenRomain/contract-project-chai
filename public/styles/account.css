@@ -19,6 +19,9 @@ img {
 .tea_tab {
   /* border: 2px solid rgba(75, 84, 134, 0.652);
   border-radius: 8px; */
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .tea_description {
