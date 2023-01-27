@@ -1,6 +1,6 @@
 const React = require('react');
 const Layout = require('./Layout');
-// const Comment = require('./Comment');
+const Comment = require('./Comment');
 
 function CountryView({ teas, title, teaCountry }) {
   return (
@@ -20,11 +20,15 @@ function CountryView({ teas, title, teaCountry }) {
                   </li>
                 ))}
               </ul>
+              <Comment />
+              {/* <form action="/:country" method="post">
+                <input type="text" name="comment" placeholder="Ваше мнение о чае" />
+                <button type="submit">Отправить</button>
+              </form> */}
             </div>
           </li>
         ))}
       </ul>
-      {/* <Comment /> */}
     </Layout>
   );
 }
