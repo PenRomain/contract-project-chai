@@ -5,6 +5,7 @@ module.exports = function Main({ title, user, teaContry }) {
   return (
     <Layout title={title} user={user}>
       <div className="main_map">
+
         <div className="china">
           <a
             title={teaContry.find((c) => c.name === 'China').teas}
@@ -242,6 +243,10 @@ module.exports = function Main({ title, user, teaContry }) {
             Индонезия
           </a>
         </div>
+
+
+
+       
       </div>
     </Layout>
   );

@@ -19,6 +19,7 @@ const adminRoute = require('./routes/admin.route');
 const accountRoute = require('./routes/account.route');
 
 const authRoute = require('./routes/auth.route');
+const commentRoute = require('./routes/comment.route');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,7 +34,11 @@ app.use(session(sessionConfig));
 app.use('/auth', authRoute);
 app.use('/', mainRoute);
 app.use('/admin', adminRoute);
+
+app.use('/comment', commentRoute);
+
 app.use('/account', accountRoute);
+
 
 
 app.listen(PORT, () => {

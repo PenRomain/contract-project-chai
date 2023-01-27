@@ -9,16 +9,14 @@ router.get('/', async (req, res) => {
   // const user = res.app.locals;
   // console.log(user);
   Country.findAll({ include: Tea })
-    .then((allCountry) =>
-      allCountry.map((country) => ({
-        name: country.name,
-        teas: country.Teas.map((tea) => tea.name).join('\n'),
-      }))
-    )
-    .then((teaCountry) =>
-      res.renderComponent(Main, { title: 'Карта чая', teaContry: teaCountry })
-    )
-    .catch(() => res.status(500).json({ message: 'что-то пошло не так' }));
+
+    .then((allCountry) => allCountry.map((country) => ({
+      name: country.name,
+      teas: country.Teas.map((tea) => tea.name).join('\n'),
+    })))
+    .then((teaCountry) => res.renderComponent(Main, { title: 'Карта чая', teaContry: teaCountry }))
+    .catch(() => res.renderComponent(Main, { title: 'Карта чая' }));
+
 });
 
 router.get('/:country', async (req, res) => {
