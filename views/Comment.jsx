@@ -1,11 +1,8 @@
 const React = require('react');
 
-function Comment({}) {
+function Comment({ comment }) {
   return (
-    <form action="/:country" method="post">
-      <input type="text" name="comment" placeholder="Ваше мнение о чае" />
-      <button type="submit">Отправить</button>
-    </form>
+    <h5>{comment.text}</h5>
   );
 }
 
