@@ -5,7 +5,6 @@ module.exports = function Main({ title, user, teaContry }) {
   return (
     <Layout title={title} user={user}>
       <div className="main_map">
-
         <div className="china"><a title={teaContry.find((c) => c.name === 'China').teas} href="/china">Китай</a></div>
         {/* <div className="japan"><a title={teaContry.find((c) => c.name === 'Japan').teas} href="/japan">Япония</a></div> */}
         {/* <div className="vietnam"><a title={teaContry.find((c) => c.name === 'Vietnam').teas} href="/vietnam">Вьетнам</a></div> */}

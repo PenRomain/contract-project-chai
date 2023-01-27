@@ -13,7 +13,8 @@ router.get('/', async (req, res) => {
       name: country.name,
       teas: country.Teas.map((tea) => tea.name).join('\n'),
     })))
-    .then((teaCountry) => res.renderComponent(Main, { title: 'Карта чая', teaContry: teaCountry }));
+    .then((teaCountry) => res.renderComponent(Main, { title: 'Карта чая', teaContry: teaCountry }))
+    .catch(() => res.status(500).json({ message: 'что-то пошло не так' }));
 });
 
 router.get('/:country', async (req, res) => {
