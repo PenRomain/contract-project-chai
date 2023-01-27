@@ -5,7 +5,7 @@ module.exports = function Main({ title, user, teaContry }) {
   return (
     <Layout title={title} user={user}>
       <div className="main_map">
-        {/* <div className="china"><a title={teaContry.find((c) => c.name === 'China').teas} href="/china">Китай</a></div> */}
+        <div className="china"><a title={teaContry.find((c) => c.name === 'China').teas} href="/china">Китай</a></div>
         {/* <div className="japan"><a title={teaContry.find((c) => c.name === 'Japan').teas} href="/japan">Япония</a></div> */}
         {/* <div className="vietnam"><a title={teaContry.find((c) => c.name === 'Vietnam').teas} href="/vietnam">Вьетнам</a></div> */}
         {/* <div className="taiwan"><a title={teaContry.find((c) => c.name === 'Taiwan').teas} href="/taiwan">Тайвань</a></div> */}
@@ -28,8 +28,8 @@ module.exports = function Main({ title, user, teaContry }) {
         {/* <div className="tanzania"><a title={teaContry.find((c) => c.name === 'Tanzania').teas} href="/tanzania">Танзания</a></div> */}
         {/* <div className="madagaskar"><a title={teaContry.find((c) => c.name === 'Madagaskar').teas} href="/madagaskar">Мадагаскар</a></div> */}
         {/* <div className="mavrikii"><a title={teaContry.find((c) => c.name === 'Mavrikii').teas} href="/mavrikii">Маврикий</a></div> */}
-        {/* <div className="postSssr"><a title={teaContry.find((c) => c.name === 'PostSssr').teasrs} href="/postSssr">Постсоветское пространство</a></div> */}
-        {/* <div className="india country"><a title={teaContry.find((c) => c.name === 'India').teas} href="/india">Индия</a></div> */}
+        {/* <div className="postSssr"><a title={teaContry.find((c) => c.name === 'PostSssr').teas} href="/postSssr">Постсоветское пространство</a></div> */}
+        <div className="india country"><a title={teaContry.find((c) => c.name === 'India').teas} href="/india">Индия</a></div>
         {/* <div className="shriLanka"><a title={teaContry.find((c) => c.name === 'ShriLanka').teas} href="/shriLanka">Шри-Ланка</a></div> */}
         {/* <div className="nepal"><a title={teaContry.find((c) => c.name === 'Nepal').teas} href="/nepal">Непал</a></div> */}
         {/* <div className="malazia"><a title={teaContry.find((c) => c.name === 'Malazia').teas} href="/malazia">Малайзия</a></div> */}
