@@ -8,7 +8,6 @@ module.exports = function Main({ title, user, teaContry }) {
 
         <div className="china">
           <a
-            title={teaContry.find((c) => c.name === 'China').teas}
             href="/china"
           >
             Китай
@@ -16,7 +15,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="japan">
           <a
-            title={teaContry.find((c) => c.name === 'Japan').teas}
             href="/japan"
           >
             Япония
@@ -24,7 +22,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="vietnam">
           <a
-            title={teaContry.find((c) => c.name === 'Vietnam').teas}
             href="/vietnam"
           >
             Вьетнам
@@ -32,7 +29,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="taiwan">
           <a
-            title={teaContry.find((c) => c.name === 'Taiwan').teas}
             href="/taiwan"
           >
             Тайвань
@@ -40,7 +36,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="australia">
           <a
-            title={teaContry.find((c) => c.name === 'Australia').teas}
             href="/australia"
           >
             Австралия
@@ -48,7 +43,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="kenia">
           <a
-            title={teaContry.find((c) => c.name === 'Kenia').teas}
             href="/kenia"
           >
             Кения
@@ -56,7 +50,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="azorskieOstrova">
           <a
-            title={teaContry.find((c) => c.name === 'Kenia').teas}
             href="/AzorskieOstrova"
           >
             Азорские острова
@@ -64,20 +57,18 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="ekvador">
           <a
-            title={teaContry.find((c) => c.name === 'Ekvador').teas}
             href="/ekvador"
           >
             Эквадор
           </a>
         </div>
         <div className="peru">
-          <a title={teaContry.find((c) => c.name === 'Peru').teas} href="/peru">
+          <a href="/peru">
             Перу
           </a>
         </div>
         <div className="brazilia">
           <a
-            title={teaContry.find((c) => c.name === 'Brazilia').teas}
             href="/brazilia"
           >
             Бразилия
@@ -85,7 +76,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="argentina">
           <a
-            title={teaContry.find((c) => c.name === 'Argentina').teas}
             href="/argentina"
           >
             Аргентина
@@ -93,7 +83,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="kamerun">
           <a
-            title={teaContry.find((c) => c.name === 'Kamerun').teas}
             href="/kamerun"
           >
             Камерун
@@ -101,7 +90,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="turkey">
           <a
-            title={teaContry.find((c) => c.name === 'Turkey').teas}
             href="/turkey"
           >
             Турция
@@ -109,7 +97,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="uganda">
           <a
-            title={teaContry.find((c) => c.name === 'Uganda').teas}
             href="/uganda"
           >
             Уганда
@@ -117,7 +104,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="ruanda">
           <a
-            title={teaContry.find((c) => c.name === 'Ruanda').teas}
             href="/ruanda"
           >
             Руанда
@@ -125,7 +111,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="burundi">
           <a
-            title={teaContry.find((c) => c.name === 'Burundi').teas}
             href="/burundi"
           >
             Бурунди
@@ -133,7 +118,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="milavi">
           <a
-            title={teaContry.find((c) => c.name === 'Milavi').teas}
             href="/milavi"
           >
             Милави
@@ -141,7 +125,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="zimbabve">
           <a
-            title={teaContry.find((c) => c.name === 'Zimbabve').teas}
             href="/zimbabve"
           >
             Зимбабве
@@ -149,7 +132,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="uznayaAfrika">
           <a
-            title={teaContry.find((c) => c.name === 'UznayaAfrika').teas}
             href="/uznayaAfrika"
           >
             Южная Африка
@@ -157,7 +139,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="mozambik">
           <a
-            title={teaContry.find((c) => c.name === 'Mozambik').teas}
             href="/mozambik"
           >
             Мозамбик
@@ -165,7 +146,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="tanzania">
           <a
-            title={teaContry.find((c) => c.name === 'Tanzania').teas}
             href="/tanzania"
           >
             Танзания
@@ -173,7 +153,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="madagaskar">
           <a
-            title={teaContry.find((c) => c.name === 'Madagaskar').teas}
             href="/madagaskar"
           >
             Мадагаскар
@@ -181,7 +160,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="mavrikii">
           <a
-            title={teaContry.find((c) => c.name === 'Mavrikii').teas}
             href="/mavrikii"
           >
             Маврикий
@@ -189,7 +167,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="postSssr">
           <a
-            title={teaContry.find((c) => c.name === 'PostSssr').teas}
             href="/postSssr"
           >
             Постсоветское пространство
@@ -197,7 +174,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="india">
           <a
-            title={teaContry.find((c) => c.name === 'India').teas}
             href="/india"
           >
             Индия
@@ -205,7 +181,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="shriLanka">
           <a
-            title={teaContry.find((c) => c.name === 'ShriLanka').teas}
             href="/shriLanka"
           >
             Шри-Ланка
@@ -213,7 +188,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="nepal">
           <a
-            title={teaContry.find((c) => c.name === 'Nepal').teas}
             href="/nepal"
           >
             Непал
@@ -221,7 +195,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="malazia">
           <a
-            title={teaContry.find((c) => c.name === 'Malazia').teas}
             href="/malazia"
           >
             Малайзия
@@ -229,7 +202,6 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="bangladesh">
           <a
-            title={teaContry.find((c) => c.name === 'Bangladesh').teas}
             href="/bangladesh"
           >
             Бангладеш
@@ -237,16 +209,11 @@ module.exports = function Main({ title, user, teaContry }) {
         </div>
         <div className="indonezia">
           <a
-            title={teaContry.find((c) => c.name === 'Indonezia').teas}
             href="/indonezia"
           >
             Индонезия
           </a>
         </div>
-
-
-
-       
       </div>
     </Layout>
   );

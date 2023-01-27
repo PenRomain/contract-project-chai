@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { logger } = require('sequelize/lib/utils/logger');
 const Main = require('../views/Main');
 const CountryView = require('../views/CountryView');
 
@@ -16,7 +15,6 @@ router.get('/', async (req, res) => {
     })))
     .then((teaCountry) => res.renderComponent(Main, { title: 'Карта чая', teaContry: teaCountry }))
     .catch(() => res.renderComponent(Main, { title: 'Карта чая' }));
-
 });
 
 router.get('/:country', async (req, res) => {
@@ -29,7 +27,7 @@ router.get('/:country', async (req, res) => {
       },
       includes: Tea,
     });
-    const comments = await Comment.findAll();
+    // const comments = await Comment.findAll();
 
     const countryId = teaCountry.id;
 
@@ -41,7 +39,7 @@ router.get('/:country', async (req, res) => {
     });
 
     res.renderComponent(CountryView, {
-      comments,
+      teas,
       title: 'титле',
       teaCountry,
     });
