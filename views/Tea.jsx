@@ -12,7 +12,7 @@ function Tea({ tea }) {
         <button type="submit">Отправить</button>
       </form>
       {tea.Comments.map((comment) => (
-        <div key={comment.id}>
+        <div className="tea-comment" key={comment.id}>
           <Comment comment={comment} />
         </div>
       ))}

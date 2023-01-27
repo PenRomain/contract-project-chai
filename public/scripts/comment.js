@@ -13,5 +13,6 @@ commentForm.addEventListener('submit', async (event) => {
     }),
   });
   const data = await res.text();
-  // insertAdjacentHTML(data)
+  document.querySelector('.tea-comment').insertAdjacentHTML('beforeend', data);
+  window.location.assign('/country');
 });
