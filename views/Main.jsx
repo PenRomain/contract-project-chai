@@ -30,7 +30,7 @@ module.exports = function Main({ title }) {
         <div className="madagaskar"><a href="/madagaskar">Мадагаскар</a></div>
         <div className="mavrikii"><a href="/mavrikii">Маврикий</a></div>
         <div className="postSssr"><a href="/postSssr">Постсоветское пространство</a></div>
-        <div className="india country"><a href="/india">Индия</a></div>
+        <div className="india"><a href="/india">Индия</a></div>
         <div className="shriLanka"><a href="/shriLanka">Шри-Ланка</a></div>
         <div className="nepal"><a href="/nepal">Непал</a></div>
         <div className="malazia"><a href="/malazia">Малайзия</a></div>
