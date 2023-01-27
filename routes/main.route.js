@@ -1,11 +1,21 @@
 const router = require('express').Router();
+const { logger } = require('sequelize/lib/utils/logger');
 const Main = require('../views/Main');
 const CountryView = require('../views/CountryView');
 
 const { Comment, Country, Tea } = require('../db/models');
 
-router.get('/', (req, res) => {
-  res.renderComponent(Main, { title: 'Карта чая' });
+
+router.get('/', async (req, res) => {
+  // const user = res.app.locals;
+  // console.log(user);
+  Country.findAll({ include: Tea })
+    .then((allCountry) => allCountry.map((country) => ({
+      name: country.name,
+      teas: country.Teas.map((tea) => tea.name).join('\n'),
+    })))
+    .then((teaCountry) => res.renderComponent(Main, { title: 'Карта чая', teaContry: teaCountry }))
+    .catch(() => res.status(500).json({ message: 'что-то пошло не так' }));
 });
 
 // router.get('/:country', async (req, res) => {
@@ -20,6 +30,16 @@ router.get('/', (req, res) => {
 //     });
 //     const comments = await Comment.findAll();
 
+ const countryId = teaCountry.id;
+    
+    const teas = await Tea.findAll({
+      where: {
+        country_id: countryId,
+      },
+      include: Comment,
+    });
+   
+   
 //     res.renderComponent(CountryView, {
 //       comments,
 //       title: 'титле',
@@ -31,5 +51,9 @@ router.get('/', (req, res) => {
 //     res.status(500).json({ message: 'Что-то пошло не так' });
 //   }
 // });
+
+
+
+
 
 module.exports = router;
