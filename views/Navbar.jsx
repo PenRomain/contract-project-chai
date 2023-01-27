@@ -4,15 +4,15 @@ const React = require('react');
 module.exports = function Navbar({ user }) {
   return (
     <div>
-      <div>
+      <div className="ccd">
         {user?.name}
-        <a href="/auth/log">Login</a>
+        <a className="ddott" href="/auth/log">Login</a>
       </div>
-      <div>
-        <a href="/auth/reg">Registration</a>
+      <div className="ccd">
+        <a className="ddott" href="/auth/reg">Registration</a>
       </div>
-      <div>
-        <a href="/auth/out">Logout</a>
+      <div className="ccd">
+        <a className="ddott" href="/auth/out">Logout</a>
       </div>
     </div>
   );

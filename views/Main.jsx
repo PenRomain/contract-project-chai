@@ -31,15 +31,12 @@ module.exports = function Main({ title, user, teaContry }) {
         {/* <div className="madagaskar"><a title={teaContry.find((c) => c.name === 'Madagaskar').teas} href="/madagaskar">Мадагаскар</a></div> */}
         {/* <div className="mavrikii"><a title={teaContry.find((c) => c.name === 'Mavrikii').teas} href="/mavrikii">Маврикий</a></div> */}
         {/* <div className="postSssr"><a title={teaContry.find((c) => c.name === 'PostSssr').teas} href="/postSssr">Постсоветское пространство</a></div> */}
-        <div className="india"><a title={teaContry.find((c) => c.name === 'India').teas} href="/india">Индия</a></div>
+        <div className="india country"><a title={teaContry.find((c) => c.name === 'India').teas} href="/india">Индия</a></div>
         {/* <div className="shriLanka"><a title={teaContry.find((c) => c.name === 'ShriLanka').teas} href="/shriLanka">Шри-Ланка</a></div> */}
         {/* <div className="nepal"><a title={teaContry.find((c) => c.name === 'Nepal').teas} href="/nepal">Непал</a></div> */}
         {/* <div className="malazia"><a title={teaContry.find((c) => c.name === 'Malazia').teas} href="/malazia">Малайзия</a></div> */}
         {/* <div className="bangladesh"><a title={teaContry.find((c) => c.name === 'Bangladesh').teas} href="/bangladesh">Бангладеш</a></div> */}
         {/* <div className="indonezia"><a title={teaContry.find((c) => c.name === 'Indonezia').teas} href="/indonezia">Индонезия</a></div> */}
-
-
-
       </div>
     </Layout>
   );
