@@ -1,11 +1,17 @@
 const router = require('express').Router();
 const Main = require('../views/Main');
 const CountryView = require('../views/CountryView');
+const Admin = require('../views/Admin');
 
 const { Comment, Country, Tea } = require('../db/models');
 
-router.get('/', (req, res) => {
-  res.renderComponent(Main, { title: 'Карта чая' });
+router.get('/', async (req, res) => {
+  const { comments } = await Comment.findAll({
+    where: {
+      user_id: req.session.user.id,
+    },
+  });
+  res.renderComponent(Admin, { comments });
 });
 
 // router.get('/:country', async (req, res) => {
