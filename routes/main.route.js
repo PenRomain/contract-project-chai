@@ -14,17 +14,31 @@ router.get('/:country', async (req, res) => {
   try {
     const country =
       req.params.country[0].toUpperCase() + req.params.country.substring(1);
+    // console.log('country==', country);
     const [teaCountry] = await Country.findAll({
       where: {
         name: country,
       },
       include: Tea,
     });
-    const comments = await Comment.findAll();
+    // console.log('teaCountry==', teaCountry);
+    const countryId = teaCountry.id;
+    // console.log('countryId==', countryId);
+    const teas = await Tea.findAll({
+      where: {
+        country_id: countryId,
+      },
+      include: Comment,
+    });
+    // console.log('teas==', teas);
+    // const comments = await Comment.findAll({
+    //   include: teas,
+    // });
+    // console.log('comments==', comments);
     // res.json(teaCountry);
-    console.log(teaCountry);
+    // console.log(teaCountry);
     res.renderComponent(CountryView, {
-      comments,
+      teas,
       title: 'титле',
       teaCountry,
     });

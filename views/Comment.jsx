@@ -1,13 +1,17 @@
 const React = require('react');
 
-function Comment({ comments }) {
+function Comment({}) {
   return (
     <ul>
-      {comments.map((comment) => (
-        <li key={comment.id}>
-          {comment.text}
+      {/* {teas.map((comments) => (
+        <li key={comments.id}>
+          {comments.map((comment) => (
+            <p key={comment.id}>
+              {comment.text}
+            </p>
+          ))}
         </li>
-      ))}
+      ))} */}
     </ul>
   );
 }

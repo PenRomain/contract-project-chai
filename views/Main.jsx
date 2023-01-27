@@ -35,7 +35,7 @@ module.exports = function Main({ title, user }) {
         <div className="nepal"><a href="/nepal">Непал</a></div>
         <div className="malazia"><a href="/malazia">Малайзия</a></div>
         <div className="bangladesh"><a href="/bangladesh">Бангладеш</a></div>
-        <div className="indonezia"><a href="indonezia">Индонезия</a></div>
+        <div className="indonezia"><a href="/indonezia">Индонезия</a></div>
 
       </div>
     </Layout>
