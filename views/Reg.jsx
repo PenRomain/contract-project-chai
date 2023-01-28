@@ -1,11 +1,11 @@
 const React = require('react');
 const Layout = require('./Layout');
 
-module.exports = function Reg({ title }) {
+module.exports = function Reg({ title, user }) {
   return (
-    <Layout title={title}>
+    <Layout title={title} user={user}>
       <h2>Regisration</h2>
-      <form action="/auth/reg" method="post">
+      <form action="/auth/reg" method="post" id="reg-form">
         <label htmlFor="name_input" className="block mar-b-1">
           Name:
         </label>

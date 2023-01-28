@@ -1,23 +1,17 @@
 const router = require('express').Router();
-
-const Main = require('../views/Main');
+// const Main = require('../views/Main');
 const CountryView = require('../views/CountryView');
+const Admin = require('../views/Admin');
 
 const { Comment, Country, Tea } = require('../db/models');
 
 router.get('/', async (req, res) => {
-  // const user = res.app.locals;
-  // console.log(user);
-  const allCountry = await Country.findAll({ include: Tea });
-
-  const teaCountry = allCountry.map((country) => ({
-    name: country.name,
-    teas: country.Teas.map((tea) => tea.name).join('\n'),
-  }));
-  console.log(teaCountry);
-  res.renderComponent(Main, { title: 'Карта чая', teaCountry });
-
-  //  res.renderComponent(Main, { title: 'Карта чая' })
+  const { comments } = await Comment.findAll({
+    where: {
+      user_id: req.session.user.id,
+    },
+  });
+  res.renderComponent(Admin, { comments });
 });
 
 router.get('/:country', async (req, res) => {
@@ -28,21 +22,12 @@ router.get('/:country', async (req, res) => {
       where: {
         name: country,
       },
-      include: Tea,
+      includes: Tea,
     });
     const comments = await Comment.findAll();
 
-    const countryId = teaCountry.id;
-
-    const teas = await Tea.findAll({
-      where: {
-        country_id: countryId,
-      },
-      include: Comment,
-    });
-
     res.renderComponent(CountryView, {
-      teas,
+      comments,
       title: 'титле',
       teaCountry,
     });
